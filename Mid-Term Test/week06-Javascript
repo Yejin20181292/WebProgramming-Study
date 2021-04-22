@@ -1,0 +1,280 @@
+<Javascript> - 6주차
+
+1. 자바스크립트 사용법
+    - <head> 태그 내에서 선언하고 <body> 태그 내에서 실행
+    - <script> ... </script> 태그 내에서 구성
+    - /* ..... */ => 여러 줄 주석
+    - // => 한 줄 주석
+    
+2. 자바스크립트 선언과 실행
+    - 내장형:
+            <head>
+              <head>
+                  <script>
+                      자바스크립트 내용
+                  </script>
+              </head>
+              <body>
+                  <script>
+                      자바스크립트 내용
+                  </script>
+              </body>
+            </head>
+
+    - 링크: <script language="JavaScript" src="test.js"></script>
+    
+    - 행 입력형:
+              <html>
+                  <head>
+                  </head>
+                  <body>
+                      <태그 이벤트핸들러="자바스크립트 소스">
+                  </body>
+              </html>
+              
+    - 함수형:
+              <html>
+                  <head>
+                      <script>
+                          function 함수명(){
+                            자바스크립트 내용
+                          }
+                      </script>
+                  </head>
+                  <body>
+                      <script>
+                          함수명()
+                      </script>
+                  </body>
+              </html>
+              
+
+3. 내장형 선언
+    <HTML>
+        <HEAD>
+            <script>
+                alert("여기는 head 태그 안 입니다.")
+            </script>
+        </HEAD>
+        <BODY>
+            <script>
+                alert("여기는 body 태그 안 입니다.")
+            </script>
+        </BODY>
+    </HTML>
+    
+
+4. 행 입력 선언
+    <HTML>
+        <HEAD>
+        </HEAD>
+        <BODY>
+            <a href="JavaScript:alert('행입력형 입니다.')"> 눌러주세요 </a>
+        </BODY>
+    </HTML>
+
+5. 함수형 선언
+    <HTML>
+        <HEAD>
+            <script>
+                function fu() {
+                  alert("함수형입니다.")
+                }
+            </script>
+        </HEAD>
+        <BODY>
+            <script>
+                fu()
+            </script>
+        </BODY>
+    </HTML>
+    
+
+6. 자바스크립트 주의 사항
+    - 한 줄에 한 개 이상의 항과 기호로 구성
+    - 새로운 줄은 새로운 문장으로 시작
+    - 한 줄에서 두 문장 이상을 작성 할 때 세미콜론(;) 사용
+    - 동일한 실행문들은 {}로 둘러싼다.
+    - 명령문이 길어서 한 줄을 넘어 갈 때 '_'로 연결
+    - 따옴표가 중목되는 경우 외부에는 큰 따옴표, 내부에는 작은 따옴표 사용
+
+
+7. 기본 문법 - 변수
+    - 변수 개요
+        var kim //변수 선언 변수명은 kim
+        var i,j,k //동시에 여러 개의 변수 선언
+        var i=1 //변수 선언과 동시에 기본 값 할당
+          - 대소문자를 구별하며, 반드시 첫 자는 영문자로 시작
+          - 문자와 숫자 만으로 구성, 한글과 밑줄(_)를 제외한 특수 문자와 공백은 사용 불가
+          - 예약어, 함수명, 객체명, 속성 등은 변수로 사용 불가
+          
+    - 변수의 종류
+        - 전역변수와 지역변수
+        - 전역변수: 스크립트 어디에서나 사용 가능
+        - 지역변수: 해당 함수 내에서만 사용
+
+
+8. 기본 문법 - 연산자
+    - 산술 연산자 : 수치 계산에 사용 (+,-,*,/)
+    
+    - 관계 연산자 : 값을 비교하는 연산자
+        i<j : i가 j보다 작다.
+        i>j : i가 j보다 크다.
+        i<=j : i가 j보다 작거나 같다.
+        i>=j : i가 j보다 크거나 같다.
+        i==j : i와 j가 같다.
+        i!=j : i와 j가 다르다.
+        
+    - 조건 연산자 : 조건에 따라 참과 거짓으로 나타내는 연산
+        조건 ? 표현식1 : 표현식2
+        
+    - 비트 연산자 : 두 수의 비트 사이에 일어나는 연산
+        A: 1111
+        B: 1010
+        A&B: 1010
+        A|B: 1111
+        A^B: 0101
+        
+    - 대입 연산자 : 변수에 값을 대입할 때 사용하는 연산자
+        i=j : i에 j를 대입
+        i+=j : i=i+j                  i &= j
+        i-=j : i=i-j                  i |= j
+        i*=j : i=i*j                  i ^= j
+        i/=j : i=i/j                  i >>= j
+        i%=j : i=i%j                  i <<= j
+                                      i >>>= j
+                                      
+    - 논리 연산자 : 조건의 참, 거짓을 판단
+        &&(AND), ||(OR), !(NOT)
+        
+    - 문자열 연산자 : 문자들을 연결시키는 역할
+        "," "+"
+        
+    - 연산자 우선 순위
+        1. 괄호 : () []
+        2. 부정/증가: ! ~ - ++ --
+        3. 곱하기/나누기: * / %
+        4. 더하기/빼기: + -
+        5. 비트 시프트: << >> >>>
+        6. 관계 연산자: < <= > >=
+        7. Equality: == !=
+        8. Bit AND: &
+        9. Bit XOR: ^
+        10. Bit OR: |
+        11. 논리 AND: &&
+        12. 논리 OR: ||
+        13. 조건 연산자: ?:
+        14. 대입 연산지: = += -= *= /= %= <<= >>= >>>= &= ^= |=
+        15. 콤마: ,
+        
+        
+9. 산술 연산자1
+      <HTML>
+          <head></head>
+          <body>
+              <script>
+                  i=10; j=20;
+                  k=i+j; document.write("i+j= " + k + "<br>");
+              </script>
+          </body>
+      </HTML>
+      
+      
+10. 산술 연산자2
+      <HTML>
+          <HEAD>
+              <script>
+                  var i,j,k;
+                  function sum(i,j){
+                      k=i+j;
+                      document.write("i와 j의 합은" + k + "<br>");
+                  }
+              </script>
+          </HEAD>
+          <BODY>
+              <form>
+                  <input type="button" value="+" onClick="sum(10,20);">
+              </form>
+          </BODY>
+      </HTML>
+      
+      
+11. 기본 문법 - 조건문
+    - 조건이 참인 경우에만 처리
+    - 조건이 만족하는 경우와 그렇지 않은 경우의 처리
+    - 조건이 참인 경우와 조건이 거짓인 경우 n개일 때의 처리
+        <HTML>
+            <head>
+                <script>
+                    function learn(su) {
+                        if(su == "국어")
+                            alert("국어를 학습하겠습니다.!");
+                        else if(su == "영어")
+                            alert("영어를 학습하겠습니다.!");
+                        else if(su == "수학")
+                            alert("수학을 학습하겠습니다.!");
+                    }
+                </script>
+            </head>
+            <body>
+                <form>
+                  <input type="button" value="국어" onClick="learn('국어')">
+                  <input type="button" value="영어" onClick="learn('영어')">
+                  <input type="button" value="수학" onClick="learn('수학')">
+                </form>
+            </body>
+        </HTML>
+      
+    - switch 문(다중선택 문) : 여러 조건에 따라 실행되는 경우
+              switch(정수값) {
+                  case 정수값1:
+                      문장1;
+                      break;
+                  case 정수값2:
+                      문장2;
+                      break;
+                  default:
+                      문장n:
+                      break;
+              }
+              
+              
+12. 기본 문법 - 반복문
+    - for문: 초기값에 의해 시작되고, 조건을 만족할 때까지 실행
+          for(초기값; 조건; 증감값) {
+              문장;
+          }
+          
+    - whild문: 조건이 참인 동안 문장을 수행
+          while(조건) {
+              문장;
+          }
+          
+    - do..while문: while문과 다르게 반드시 한번은 수행
+          do {
+              문장;
+          }while(조건);
+          
+    - break(반복문 종료)와 continue(반복문 넘어가기)문
+          while(조건1) {
+              문장;
+              if(조건2) {
+                  continue;
+              }
+              else {
+                  break;
+              }
+              문장2;
+          }
+          
+          
+13. 요약
+    - 자바스크립트 : 자바스크립트 코드를 선언하고 실행하는 방법은 내장형, 행 입력형, 함수형, 링크형으로 분류
+    - 변수 : 특정 값을 저장할 수 있는 저장소. 자바스크립트에서는 선언 없이 사용 가능. 전연, 지역 변수가 있다.
+    - 자료형 : 정수, 부동소수점, 문자열, 부울린, 객체, null, undefined 등의 6가지 형식
+    - 연산자 : 산술, 관계, 논리, 비트, 조건, 문자열, 증감 연산자가 있다.
+    - 조건문 : 제어문의 일종으로, 조건에 따라 처리 순서를 변경할 수 있도록 하는데 이용
+    - 반복문 : 주어진 조건동안 계속해서 연산을 수행하게 한다. for, while, do~while문 등이 있다.
+    - switch문 : 다중 선택문이고, 여러 가지 조건에 따라서 실행되어야 하는 경우 이용
+    
+    
