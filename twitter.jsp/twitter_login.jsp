@@ -8,10 +8,10 @@
 </head>
 <body>
 	<div align="center">
-		<h2> ํธ์ํฐ ๋ก๊ทธ์ธ </h2>
+		<h2>ฦฎภงลอ ทฮฑืภฮ</h2>
 		<form name="form1" method="POST" action="twitter_list.jsp">
 			<input type="text" name="username"/>
-			<input type="submit" value="๋ก๊ทธ์ธ"/>
+			<input type="submit" value="ทฮฑืภฮ"/>
 		</form>
 	</div>
 </body>
